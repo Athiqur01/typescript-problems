@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-//problem-1
 function formatString(input, toUpper) {
     if (toUpper === false) {
         return input.toLowerCase();
@@ -20,7 +19,6 @@ function formatString(input, toUpper) {
 console.log(formatString("Hello"));
 console.log(formatString("Mello", false));
 console.log(formatString("Gelo", true));
-//problem-2
 function filterByRating(items) {
     const rating4OrMore = items.filter(item => item.rating >= 4);
     return rating4OrMore;
@@ -31,7 +29,6 @@ const books = [
     { title: "Book C", rating: 5.0 }
 ];
 console.log(filterByRating(books));
-//problem-3
 function concatenateArrays(...arrays) {
     const result = [];
     for (const array of arrays) {
@@ -40,7 +37,6 @@ function concatenateArrays(...arrays) {
     return result;
 }
 console.log(concatenateArrays([1, 2, 5], ["4", 5, 6]));
-//problem-4
 class Vehicle {
     constructor(make, year) {
         this.make = make;
@@ -62,7 +58,6 @@ class Car extends Vehicle {
 const myCar = new Car("Toyota", 2020, "Corolla");
 myCar.getInfo(); // Output: "Make: Toyota, Year: 2020"
 myCar.getModel();
-// Problem-5
 function processValue(value) {
     if (typeof value === "string") {
         return value.length;
@@ -85,14 +80,12 @@ function getMostExpensiveProduct(products) {
     }
     return maxExpensiveProduct;
 }
-// Example usage:
 const products = [
     { name: "Pen", price: 10 },
     { name: "Notebook", price: 25 },
     { name: "Bag", price: 50 }
 ];
 console.log(getMostExpensiveProduct(products));
-//problem-7
 var Day;
 (function (Day) {
     Day[Day["Monday"] = 0] = "Monday";
@@ -107,13 +100,12 @@ function getDayType(day) {
     return Day.Saturday === day || Day.Sunday === day ? "Weekend" : "Weekday";
 }
 console.log(getDayType(Day.Monday));
-//problem-8
 function squareAsync(n) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (n < 0) {
-                    reject(new Error("Number must be non-negative"));
+                    reject(new Error("Number must not be negative"));
                 }
                 else {
                     resolve(n * n);
@@ -123,8 +115,6 @@ function squareAsync(n) {
     });
 }
 squareAsync(4)
-    .then(console.log) // Output after 1s: 16
-    .catch(console.error);
+    .then(console.log);
 squareAsync(-3)
-    .then(console.log)
-    .catch(console.error); // Output: Error: Negative number not allowed
+    .catch(console.error);
